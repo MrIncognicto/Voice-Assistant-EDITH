@@ -9,5 +9,7 @@ speechRecognition
 Pyttsx3
 PlaySound
 
+For Debian users install pyaudio for Speech recognition to work
+sudo apt-get install PyAudio
 
 Made in Python
