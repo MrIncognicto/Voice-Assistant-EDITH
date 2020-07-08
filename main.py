@@ -5,11 +5,14 @@ import time
 import webbrowser
 from playsound import playsound
 
+#Getting Current Time
 now= datetime.datetime.now()
 current_time =now.strftime("%H:%M")
 current_time = str(current_time)
-Today=datetime.date.today()
+Today= str(datetime.date.today())
 
+
+#Saving the Person Name
 class person:
 	name = ''
 	def setName(self,name):
@@ -20,13 +23,15 @@ def there_exist(terms):
 		if term in text:
 			return True
 
-
+#Making Edith to Speak
 def speak(tts):
 	engine =pyttsx3.init()
 	engine.setProperty('rate', 150)
 	engine.say(tts)
 	engine.runAndWait()
 
+
+#Initializing Voice Recognision
 r =sr.Recognizer()
 def listen():
 	with sr.Microphone() as source:
@@ -47,6 +52,8 @@ print('How can I help You')
 
 text = listen()
 
+
+#initializing EDITH Response
 def response(audio_file):
 	#Greeting
 	if there_exist(['Hi', 'Hello', 'Hey Edith', 'Edith']) :
@@ -101,7 +108,7 @@ def response(audio_file):
 		speak('Bye, See you when you need my help')
 		exit()
 
-time.sleep(1)
+time.sleep(2)
 
 character =person()
 
